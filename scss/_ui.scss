@@ -1,0 +1,90 @@
+$link-size: 12px;
+$link-weight: 500;
+
+@mixin default-link {
+	font-family: $second_font;
+	font-weight: $link-weight;
+	font-size: $link-size;
+	color: $black;
+
+	@include transition-default;
+	&:hover {
+		@include default-hover-link;
+	}
+}
+
+@mixin default-hover-link {
+	color: $main_color;
+}
+
+$btn-size: 12px;
+$btn-weight: 600;
+$btn-transform: uppercase;
+$btn-border: 1px solid $black;
+$btn-radius: 100px;
+$btn-h: 36px;
+$btn-w: 124px;
+
+@mixin default-btn {
+	min-width: $btn-w;
+	height: $btn-h;
+
+	font-weight: $btn-weight;
+	font-size: $btn-size;
+	text-transform: $btn-transform;
+
+	border: $btn-border;
+	border-radius: $btn-radius;
+
+	color: $black;
+
+	cursor: pointer;
+
+	@include transition-cubic;
+	&:hover {
+		@include default-hover-btn;
+	}
+}
+
+@mixin default-hover-btn {
+	background: $main_color;
+	border-color: $main_color;
+	color: $white;
+}
+
+@media (orientation: landscape) and (max-width: 767px) {
+	body {
+		&:before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 888;
+			background: $main_color;
+		}
+		&:after {
+			content: '';
+			position: fixed;
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%) rotate(-45deg);
+			z-index: 999;
+			background: url('../img/icons/rotate_mobile.svg') no-repeat;
+			background-size: contain;
+			width: 150px;
+			height: 150px;
+			animation: 2s rotate_mobile infinite ease;
+		}
+		@keyframes rotate_mobile {
+			0% {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+			70% {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+		}
+	}
+}

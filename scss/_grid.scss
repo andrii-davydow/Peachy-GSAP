@@ -1,0 +1,21 @@
+$container: 1344px;
+$padding-h: 20px;
+
+.container {
+	width: 100%;
+	max-width: calc($container + $padding-h * 2);
+	padding-left: $padding-h;
+	padding-right: $padding-h;
+	margin: 0 auto;
+	&-flex {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	&-v-center {
+		align-items: center;
+	}
+	&-h-center {
+		justify-content: center;
+	}
+}

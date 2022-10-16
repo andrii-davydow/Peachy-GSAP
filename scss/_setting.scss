@@ -1,0 +1,16 @@
+$main_color: #369bd4;
+
+$black: #0c1c1f;
+$white: #ffffff;
+$gray: #616b6d;
+
+$main_font: 'Space Grotesk', sans-serif;
+$second_font: 'Red Hat Display', sans-serif;
+
+@mixin transition-cubic {
+	transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@mixin transition-default {
+	transition: 0.3s ease-in-out;
+}
