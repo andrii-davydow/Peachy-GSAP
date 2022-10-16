@@ -2,6 +2,12 @@ import { initScrollPage } from './scrollPage/index.js';
 
 const initDOM = () => {
 	initScrollPage({
+		coverContent: {
+			animation: true,
+			header: ['.logo-item', '.task-item', '.action-item'],
+			photo: '.pill-item',
+			scroll: '.scroll-item',
+		},
 		pillContent: {
 			trigger: '.main-screen',
 			line: '.pill-item-line',

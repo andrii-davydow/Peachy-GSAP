@@ -1,5 +1,8 @@
-export const initScrollPage = (param) => {
-	const { pillContent } = param;
+import { coverAnimation } from './coverAnimation.js';
 
-	console.log(pillContent);
+export const initScrollPage = (param) => {
+	const { coverContent, pillContent } = param;
+	const { animation } = coverContent;
+
+	animation ? coverAnimation(coverContent) : null;
 };
