@@ -21,6 +21,6 @@ export const pillAnimation = ({
 		pin: true,
 		start: 'top top',
 		end: 'bottom-=50 top',
-		scrub: 1,
+		scrub: 3,
 	});
 };
