@@ -1,0 +1,91 @@
+$padding-header: 40px 0;
+$padding-header-tablet: 30px 0;
+$padding-header-phone: 0 0 30px 0;
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: $padding-header;
+	z-index: 2;
+	.logo-item {
+		width: 220px;
+		&-link {
+			display: block;
+			color: $black;
+			font-size: 16px;
+			span {
+				font-weight: 600;
+				font-size: 24px;
+				margin-right: 4px;
+				@include transition-default;
+			}
+			&:hover {
+				span {
+					color: $main_color;
+				}
+			}
+		}
+	}
+	.task-item {
+		width: calc(100% - 220px - 220px);
+		text-align: center;
+		&-info {
+			font-weight: 600;
+			font-size: 12px;
+			color: $black;
+		}
+	}
+	.action-item {
+		width: 220px;
+		text-align: right;
+		&-cart {
+			@include default-link;
+			margin-right: 28px;
+		}
+		&-start {
+			@include default-btn;
+		}
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	header {
+		padding: $padding-header-tablet;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	header {
+		padding: $padding-header-phone;
+		.logo-item {
+			order: -1;
+			width: 100vw;
+			margin: 0 -20px 10px -20px;
+
+			background: $black;
+
+			&-link {
+				color: $white;
+				padding: 10px 20px;
+				text-align: center;
+				font-size: 14px;
+				span {
+					font-size: 20px;
+				}
+			}
+		}
+		.task-item {
+			width: auto;
+		}
+		.action-item {
+			width: auto;
+			&-cart {
+				margin-right: 10px;
+			}
+			&-start {
+				min-width: 100px;
+			}
+		}
+	}
+}
